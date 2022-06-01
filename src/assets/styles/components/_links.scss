@@ -1,0 +1,110 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+
+.links-wrapper{
+  gap: .1rem;
+  height: 100vh;
+  @include mix.flex(column, $align:center);
+
+  .link-wrapper{
+    flex: 1;
+    min-height: 34rem;
+    width: 100%;
+    @include mix.flex($just: flex-start, $align: center);
+
+    &--no-click{
+      pointer-events: none;
+      cursor: none;
+    }
+
+    &:nth-child(1){
+      background-color: var.$primary-1;
+    }
+    &:nth-child(2){
+      background-color: var.$primary-2;
+    }
+    &:nth-child(3){
+      background-color: var.$primary-3;
+    }
+    &:hover{
+      transition: background-color 400ms ease-in-out;
+      background-color: var.$primary-4;
+    }
+  }
+  .link{
+    @include mix.clamped(margin-left, 38, 146);
+    @include mix.header-font();
+  }
+}
+
+
+.link-wrapper--current-page-animate{
+  &--from-home{
+    animation: var.$ani-dur link-wrapper--current-page-animate--from-home ease forwards ;
+  }
+  &--to-home{
+    animation: var.$ani-dur link-animate--from-home ease forwards ;
+  }
+}
+@keyframes link-wrapper--current-page-animate--from-home {
+  0%{
+    position: static;
+    top: unset;
+    bottom: unset;
+  } 
+  100%{
+    position: relative;
+    top: 0;
+    bottom: 0;
+  } 
+}
+@keyframes link-animate--to-home {
+  0%{
+    visibility: hidden;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  50%{
+    visibility: visible;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  100%{
+    visibility: visible;
+    transform: translateX(0);
+  } 
+}
+
+
+.link-animate--from-home{
+  animation: var.$ani-dur link-animate--from-home ease forwards ;
+}
+.link-animate--to-home{
+  animation:  var.$ani-dur link-animate--to-home ease forwards ;
+}
+@keyframes link-animate--from-home {
+  0%{
+    visibility: visible;
+    transform: translateX(0);
+  } 
+  50%{
+    visibility: hidden;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  100%{
+    visibility: hidden;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+}
+@keyframes link-animate--to-home {
+  0%{
+    visibility: hidden;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  50%{
+    visibility: visible;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  100%{
+    visibility: visible;
+    transform: translateX(0);
+  } 
+}

@@ -1,0 +1,78 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+
+.page-title-wrapper{
+  visibility: hidden;
+
+  @include mix.for-size(tablet){
+    position: fixed;
+    right: 4rem;
+    top: 0;
+
+    rotate: 90deg;
+    transform-origin: 0 0;
+    translate: 100% 0;
+
+    @include mix.clamped(right, 56, 126);
+  }
+}
+
+.page-title{
+  gap: 1.6rem;
+  @include mix.clamped(right, 18, 47);
+  @include mix.flex($align: center);
+
+  &__line{
+    background-color: var.$secondary;
+    @include mix.clamped(height, 6, 8);
+    @include mix.clamped(width, 96, 128);
+  }
+
+  &__itself{
+    @include mix.header-font();
+  }
+}
+
+
+.page-title-animate--from-home{
+  @include mix.for-size(tablet){
+    animation: page-title-tablet-animate--from-home forwards var.$ani-dur ease ;
+  }
+}
+.page-title-animate--to-home{
+  @include mix.for-size(tablet){
+    animation: page-title-tablet-animate--to-home forwards var.$ani-dur ease ;
+  }
+}
+
+@keyframes page-title-tablet-animate--from-home {
+  0%{
+    visibility: hidden;
+    transform: translateX(0);
+  } 
+  50%{
+    visibility: hidden;
+    transform: translateX(-#{var.$ani-distance});
+  } 
+  100%{
+    visibility: visible;
+    transform: translateX(0);
+  } 
+}
+
+@keyframes page-title-tablet-animate--to-home {
+  0%{
+    visibility: visible;
+    transform: translateX(0);
+  } 
+  50%{
+    visibility: hidden;
+    transform: translateX(-#{var.$ani-distance});
+  } 
+  99%{
+    transform: translateX(0);
+  }
+  100%{
+    visibility: hidden;
+  } 
+}
