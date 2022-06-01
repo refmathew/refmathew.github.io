@@ -4,6 +4,7 @@
     <page-title :page-title="getPageTitle()" :animate="animate" />
     <burger-menu :page-title="getPageTitle()" :animate="animate" />
     <socials :animate="animate" />
+    <links :links="this.$static.links" :page-title="getPageTitle()" :animate="animate" />
     <slot />
   </div>
 </template>
@@ -29,7 +30,8 @@
 import Logo from '~/components/Logo'
 import PageTitle from '~/components/PageTitle'
 import BurgerMenu from '~/components/BurgerMenu'
-import Socials from '../components/Socials'
+import Socials from '~/components/Socials'
+import Links from '~/components/Links'
 
 export default {
   components: {
@@ -37,6 +39,7 @@ export default {
     PageTitle,
     BurgerMenu,
     Socials,
+    Links
   },
   data() {
     return {

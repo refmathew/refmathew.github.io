@@ -1,0 +1,7 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+
+.page--who-i-am{
+  background-color: var.$primary-1;
+  height: 100vh; 
+}

@@ -1,0 +1,14 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+
+// .page{
+  // transform: translateY(100vh);
+  // animation: 800ms page--animate 800ms ease forwards;
+  // background-color: var.$primary-1;
+// }
+
+// @keyframes page--animate {
+  // 100%{
+    // transform: translateY(-100vh);
+  // } 
+// }

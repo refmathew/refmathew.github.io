@@ -4,4 +4,8 @@
 
 @use "./layouts/default";
 
+@use "./pages/page";
 @use "./pages/index";
+@use "./pages/whoIAm";
+@use "./pages/whatIveMade";
+@use "./pages/writings";

@@ -3,11 +3,11 @@
 
 .links-wrapper{
   gap: .1rem;
-  height: 100vh;
+  overflow: hidden;
   @include mix.flex(column, $align:center);
 
   .link-wrapper{
-    flex: 1;
+    flex-grow: 1;
     min-height: 34rem;
     width: 100%;
     @include mix.flex($just: flex-start, $align: center);
@@ -38,49 +38,61 @@
 }
 
 
-.link-wrapper--current-page-animate{
-  &--from-home{
-    animation: var.$ani-dur link-wrapper--current-page-animate--from-home ease forwards ;
+// =============================================================================
+// ===   Links Wrapper Animation   =============================================
+// =============================================================================
+// .links-wrapper--animate{
+  // animation: 800ms links-wrapper--animate 800ms ease forwards;
+// }
+// @keyframes link-wrapper--animate{
+  // 100%{
+    // gap: 0rem;
+  // }
+// }
+
+
+// =============================================================================
+// ===   Link Wrapper Animation   ==============================================
+// =============================================================================
+.links-wrapper{
+
+  .link-wrapper-home-page--animate{
+    animation: 800ms link-wrapper--home-page--animate 800ms ease forwards;
   }
-  &--to-home{
-    animation: var.$ani-dur link-animate--from-home ease forwards ;
+  .link-wrapper--current-page--animate{
+    animation: 1600ms link-wrapper--current-page--animate ease forwards;
+  }
+  .link-wrapper--non-current-page--animate{
+    animation: link-wrapper--non-current-page--animate 800ms ease forwards;
   }
 }
-@keyframes link-wrapper--current-page-animate--from-home {
-  0%{
-    position: static;
-    top: unset;
-    bottom: unset;
-  } 
+@keyframes link-wrapper--home-page--animate {
   100%{
-    position: relative;
-    top: 0;
-    bottom: 0;
+    min-height: 34rem;
   } 
 }
-@keyframes link-animate--to-home {
-  0%{
-    visibility: hidden;
-    transform: translateX(-#{ var.$ani-distance });
-  } 
-  50%{
-    visibility: visible;
-    transform: translateX(-#{ var.$ani-distance });
-  } 
+@keyframes link-wrapper--current-page--animate {
   100%{
-    visibility: visible;
-    transform: translateX(0);
+    min-height: 0vh;
+    height: 0vh;
+  } 
+}
+@keyframes link-wrapper--non-current-page--animate {
+  100%{
+    flex-grow: 0;
+    min-height: 0vh; 
+    height: 0vh;
   } 
 }
 
 
-.link-animate--from-home{
-  animation: var.$ani-dur link-animate--from-home ease forwards ;
+.link--animate--from-home{
+  animation: var.$ani-dur link--animate--from-home ease forwards ;
 }
-.link-animate--to-home{
-  animation:  var.$ani-dur link-animate--to-home ease forwards ;
+.link--animate--to-home{
+  animation:  var.$ani-dur link--animate--to-home ease forwards ;
 }
-@keyframes link-animate--from-home {
+@keyframes link--animate--from-home {
   0%{
     visibility: visible;
     transform: translateX(0);
@@ -94,7 +106,7 @@
     transform: translateX(-#{ var.$ani-distance });
   } 
 }
-@keyframes link-animate--to-home {
+@keyframes link--animate--to-home {
   0%{
     visibility: hidden;
     transform: translateX(-#{ var.$ani-distance });
