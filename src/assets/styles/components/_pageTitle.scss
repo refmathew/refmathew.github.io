@@ -3,16 +3,11 @@
 
 .page-title-wrapper{
   position: fixed;
-
-    right: 4rem;
-    top: 0;
-
-    rotate: 90deg;
-    transform-origin: 0 0;
-    translate: 100% 0;
-
-    @include mix.clamped(right, 56, 126);
-  }
+  top: 0;
+  transform-origin: top right;
+  transform: rotate(90deg) translate(100%);
+  @include mix.clamped(right, 56, 126);
+}
 
 
 .page-title{
@@ -33,40 +28,47 @@
 
 
 .page-title-animate--from-home{
-    animation: page-title-tablet-animate--from-home forwards var.$ani-dur ease ;
+    animation: page-title--tablet-animate--from-home forwards var.$ani-dur ease ;
 }
 .page-title-animate--to-home{
-    animation: page-title-tablet-animate--to-home forwards var.$ani-dur ease ;
+    animation: page-title--tablet-animate--to-home forwards var.$ani-dur ease ;
 }
 
-@keyframes page-title-tablet-animate--from-home {
+@keyframes page-title--tablet-animate--from-home {
   0%{
     visibility: hidden;
-    transform: translateX(0);
+    transform: rotate(90deg) translate(100%);
+    top: 0;
   } 
   50%{
     visibility: hidden;
-    transform: translateX(-#{var.$ani-distance});
+    transform: rotate(90deg) translate(100%);
+    top: -#{var.$ani-distance};
   } 
   100%{
     visibility: visible;
-    transform: translateX(0);
+    transform: rotate(90deg) translate(100%);
+    top: 0;
   } 
 }
 
-@keyframes page-title-tablet-animate--to-home {
+@keyframes page-title--tablet-animate--to-home {
   0%{
     visibility: visible;
-    transform: translateX(0);
+    transform: rotate(90deg) translate(100%);
+    top: 0;
   } 
   50%{
     visibility: hidden;
-    transform: translateX(-#{var.$ani-distance});
+    transform: rotate(90deg) translate(100%);
+    top: -#{var.$ani-distance};
   } 
   99%{
-    transform: translateX(0);
+    transform: rotate(90deg) translate(100%);
+    top: 0;
   }
   100%{
     visibility: hidden;
+    top: 0;
   } 
 }
