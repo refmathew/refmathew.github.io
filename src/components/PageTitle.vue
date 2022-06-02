@@ -1,12 +1,9 @@
 <template>
-  <g-link 
-    :class="[ 
-      'page-title-wrapper',
-      { 'page-title-animate--from-home': animateFromHome === true },
-      { 'page-title-animate--to-home': animateToHome === true },
-    ]"
-    to="/"
-  >
+  <g-link :class="[
+    'page-title-wrapper',
+    { 'page-title-animate--from-home': pageTitle !== 'Home' },
+    { 'page-title-animate--to-home': pageTitle === 'Home' },
+  ]" to="/">
     <div class="page-title">
       <div class="page-title__line"></div>
       <div class="page-title__itself">{{ pageTitleNew }}</div>
@@ -21,34 +18,17 @@
 
 <script>
 export default {
-  props: ['pageTitle', 'animate'],
-  data(){
+  props: ['pageTitle'],
+  data() {
     return {
-      pageTitleNew : '',
-      animateFromHome: false,
-      animateToHome: false,
+      pageTitleNew: '',
     }
   },
   watch: {
-    pageTitle(to, from){
-      setTimeout(()=>{
+    pageTitle(to, from) {
+      setTimeout(() => {
         this.pageTitleNew = to
       }, 800)
-
-
-      // from home
-      if(from === undefined){
-        this.animateFromHome = false
-        this.animateToHome = false
-        this.animateFromHome = true
-      }
-
-      // to home
-      if(to === undefined){
-        this.animateFromHome = false
-        this.animateToHome = false
-        this.animateToHome = true
-      }
     },
   }
 }

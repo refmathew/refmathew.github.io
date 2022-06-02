@@ -11,10 +11,6 @@ html{
   scroll-behavior: smooth;
 }
 
-#app{
-  min-width: 360px;  
-}
-
 .page-section{
   @include mix.max-width__section;
 }

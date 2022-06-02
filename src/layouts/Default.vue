@@ -1,11 +1,12 @@
 <template>
   <div class="layout-default">
     <logo :animate="animate" />
-    <page-title :page-title="getPageTitle()" :animate="animate" />
+    <page-title :page-title="getPageTitle()" />
     <burger-menu :page-title="getPageTitle()" :animate="animate" />
     <socials :animate="animate" />
-    <links :links="this.$static.links" :page-title="getPageTitle()" :animate="animate" />
+    <index :links="this.$static.links" :page-title="getPageTitle()" :animate="animate" />
     <slot />
+    <who-i-am />
   </div>
 </template>
 
@@ -31,7 +32,8 @@ import Logo from '~/components/Logo'
 import PageTitle from '~/components/PageTitle'
 import BurgerMenu from '~/components/BurgerMenu'
 import Socials from '~/components/Socials'
-import Links from '~/components/Links'
+import Index from '~/views/Index'
+import WhoIAm from '~/views/WhoIAm'
 
 export default {
   components: {
@@ -39,7 +41,8 @@ export default {
     PageTitle,
     BurgerMenu,
     Socials,
-    Links
+    Index,
+    WhoIAm,
   },
   data() {
     return {
@@ -62,7 +65,7 @@ export default {
         link => link.node.link === path.slice(1)
       )
 
-      if (!pageTitle) return pageTitle
+      if (!pageTitle) return 'Home'
 
       pageTitle = pageTitle.node.name
       return pageTitle

@@ -24,15 +24,13 @@ export default {
   },
   watch: {
     pageTitle(to, from) {
-      // from home
-      if (from === undefined) {
+      if (from === 'Home') {
         this.animateFromHome = false
         this.animateToHome = false
         this.animateFromHome = true
       }
 
-      // to home
-      if (to === undefined) {
+      if (to === 'Home') {
         this.animateFromHome = false
         this.animateToHome = false
         this.animateToHome = true

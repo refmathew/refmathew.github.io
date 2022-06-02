@@ -22,14 +22,10 @@
 }
 
 .menu-animate--from-home{
-  @include mix.for-size(tablet){
-    animation: menu-animate--from-home forwards var.$ani-dur ease ;
-  }
+  animation: menu-animate--from-home forwards var.$ani-dur ease ;
 }
 .menu-animate--to-home{
-  @include mix.for-size(tablet){
-    animation: menu-animate--to-home forwards var.$ani-dur ease ;
-  }
+  animation: menu-animate--to-home forwards var.$ani-dur ease ;
 }
 
 @keyframes menu-animate--from-home {

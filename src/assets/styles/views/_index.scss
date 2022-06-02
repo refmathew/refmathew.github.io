@@ -1,0 +1,116 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+
+.links-wrapper{
+  gap: .1rem;
+  overflow: hidden;
+  @include mix.flex(column, $align:center);
+
+  .link-wrapper{
+    animation: var.$ani-dur link-wrapper--animate ease forwards;
+    width: 100%;
+    @include mix.flex($just: flex-start, $align: center);
+
+    &--no-click{
+      pointer-events: none;
+      cursor: none;
+    }
+
+    &:nth-child(1){
+      background-color: var.$primary-1;
+    }
+    &:nth-child(2){
+      background-color: var.$primary-2;
+    }
+    &:nth-child(3){
+      background-color: var.$primary-3;
+    }
+    &:hover{
+      transition: background-color 400ms ease-in-out;
+      background-color: var.$primary-4;
+    }
+  }
+  .link{
+    @include mix.clamped(margin-left, 38, 146);
+    @include mix.header-font();
+  }
+}
+
+
+// =============================================================================
+// ===   Links Wrapper Animation   =============================================
+// =============================================================================
+.links-wrapper--inactive{
+  animation: 800ms links-wrapper--inactive 800ms ease forwards;
+}
+@keyframes links-wrapper--inactive{
+  100%{
+    gap: 0rem;
+  }
+}
+
+
+// =============================================================================
+// ===   Link Wrapper Animation   ==============================================
+// =============================================================================
+.links-wrapper{
+  .link-wrapper--from-home--animate{
+    animation: var.$ani-dur link-wrapper--from-home--animate ease forwards;
+  }
+}
+@keyframes link-wrapper--animate {
+  0%{
+    min-height: 0vh;
+    height: 0vh;
+  }
+  100%{
+    min-height: 34rem;
+    height: unset;
+  } 
+}
+@keyframes link-wrapper--from-home--animate {
+  0%{
+    min-height: 34rem;
+    height: unset;
+  } 
+  100%{
+    min-height: 0vh;
+    height: 0vh;
+  } 
+}
+
+
+.link--animate--from-home{
+  animation: var.$ani-dur link--animate--from-home ease forwards ;
+}
+.link--animate--to-home{
+  animation:  var.$ani-dur link--animate--to-home ease forwards ;
+}
+@keyframes link--animate--from-home {
+  0%{
+    display: inline-block;
+    transform: translateX(0);
+  } 
+  50%{
+    display: none;;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  100%{
+    display: none;;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+}
+@keyframes link--animate--to-home {
+  0%{
+    display: none;;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  50%{
+    display: inline-block;
+    transform: translateX(-#{ var.$ani-distance });
+  } 
+  100%{
+    display: inline-block;
+    transform: translateX(0);
+  } 
+}
