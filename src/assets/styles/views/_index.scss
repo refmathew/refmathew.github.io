@@ -55,6 +55,7 @@
 @keyframes links-wrapper--inactive{
   100%{
     min-height: 0vh;
+    height: 0vh;
     gap: 0rem;
   }
 }
@@ -99,6 +100,11 @@
     min-height: 21.3rem;
     height: unset;
   } 
+  99%{
+    flex: 1;
+    min-height: 0vh;
+    height: unset;
+  } 
   100%{
     flex: unset;
     min-height: 0vh;
@@ -123,6 +129,11 @@
   0%{
     flex: 1;
     min-height: 34rem;
+    height: unset;
+  } 
+  99%{
+    flex: 1;
+    min-height: 0vh;
     height: unset;
   } 
   100%{
