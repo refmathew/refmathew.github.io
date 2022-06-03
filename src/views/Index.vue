@@ -25,10 +25,5 @@
 <script>
 export default {
   props: ['animate', 'pageTitle', 'links'],
-  watch: {
-    pageTitle(to, from) {
-      console.log(to, from)
-    }
-  }
 }
 </script>

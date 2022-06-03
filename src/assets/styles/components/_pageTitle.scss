@@ -3,17 +3,27 @@
 
 .page-title-wrapper{
   position: fixed;
-  top: 0;
-  transform: rotate(90deg) translate(100%);
-  transform-origin: top right;
-  @include mix.clamped(right, 56, 126);
+  right: 0;
+  top: 7.4rem;
+  z-index: 1;
+
+  @include mix.for-size(tablet){
+    top: 0;
+    transform: rotate(90deg) translate(100%);
+    transform-origin: top right;
+    @include mix.clamped(right, 56, 126);
+  }
 }
 
 
 .page-title{
   gap: 1.6rem;
-  @include mix.clamped(right, 18, 47);
-  @include mix.flex(row, $align: center);
+  @include mix.flex(row-reverse, $align: center);
+
+  @include mix.for-size(tablet){
+    flex-direction: row;
+  };
+
 
   &__line{
     background-color: var.$secondary;
@@ -27,13 +37,50 @@
 }
 
 
+// =============================================================================
+// ===   Page Title Animation   ================================================
+// =============================================================================
 .page-title-animate--from-home{
+  animation: page-title--animate--from-home forwards var.$ani-dur ease ;
+  @include mix.for-size(tablet){
     animation: page-title--tablet-animate--from-home forwards var.$ani-dur ease ;
+  }
 }
 .page-title-animate--to-home{
+  animation: page-title--animate--to-home forwards var.$ani-dur ease ;
+  @include mix.for-size(tablet){
     animation: page-title--tablet-animate--to-home forwards var.$ani-dur ease ;
+  }
 }
 
+@keyframes page-title--animate--from-home {
+  0%{
+    transform: translateX(0);
+    visibility: hidden;
+  } 
+  50%{
+    transform: translateX(var.$ani-distance);
+    visibility: hidden;
+  } 
+  100%{
+    transform: translateX(0);
+    visibility: visible;
+  } 
+}
+@keyframes page-title--animate--to-home {
+  0%{
+    transform: translate(0);
+    visibility: visible;
+  } 
+  50%{
+    transform: translate(var.$ani-distance);
+    visibility: hidden;
+  } 
+  100%{
+    transform: translate(0);
+    visibility: hidden;
+  } 
+}
 @keyframes page-title--tablet-animate--from-home {
   0%{
     visibility: hidden;
@@ -51,7 +98,6 @@
     top: 0;
   } 
 }
-
 @keyframes page-title--tablet-animate--to-home {
   0%{
     visibility: visible;
