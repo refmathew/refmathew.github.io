@@ -28,10 +28,10 @@
 </static-query>
 
 <script>
-import Logo from '~/components/Logo'
-import PageTitle from '~/components/PageTitle'
-import BurgerMenu from '~/components/BurgerMenu'
-import Socials from '~/components/Socials'
+import Logo from '~/components/layouts/default/Logo'
+import PageTitle from '~/components/layouts/default/PageTitle'
+import BurgerMenu from '~/components/layouts/default/BurgerMenu'
+import Socials from '~/components/layouts/default/Socials'
 import Index from '~/views/Index'
 import WhoIAm from '~/views/WhoIAm'
 
