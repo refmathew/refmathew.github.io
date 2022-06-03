@@ -2,10 +2,10 @@
 @use '../abstracts/var';
 
 .socials-wrapper{
-  display: inline-block;
-
   bottom: 0;
+  display: inline-block;
   position: fixed;
+  z-index: 1;
   @include mix.clamped(right, 18, 47);
 }
 

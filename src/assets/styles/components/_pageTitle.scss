@@ -4,8 +4,8 @@
 .page-title-wrapper{
   position: fixed;
   top: 0;
-  transform-origin: top right;
   transform: rotate(90deg) translate(100%);
+  transform-origin: top right;
   @include mix.clamped(right, 56, 126);
 }
 

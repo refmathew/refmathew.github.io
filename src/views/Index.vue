@@ -1,7 +1,8 @@
 <template>
   <nav :class="[
     'links-wrapper',
-    { 'links-wrapper--inactive': pageTitle !== 'Home' }
+    { 'links-wrapper--active': pageTitle === 'Home' },
+    { 'links-wrapper--inactive': pageTitle !== 'Home' },
   ]">
     <g-link :class="[
       'link-wrapper',

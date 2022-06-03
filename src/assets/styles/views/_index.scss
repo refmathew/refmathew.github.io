@@ -2,11 +2,12 @@
 @use '../abstracts/var';
 
 .links-wrapper{
-  gap: .1rem;
   overflow: hidden;
+  min-height: 100vh;
   @include mix.flex(column, $align:center);
 
   .link-wrapper{
+    flex: 1;
     width: 100%;
     @include mix.flex($just: flex-start, $align: center);
 
@@ -39,11 +40,21 @@
 // =============================================================================
 // ===   Links Wrapper Animation   =============================================
 // =============================================================================
+.links-wrapper--active{
+  animation: var.$ani-dur links-wrapper--active ease forwards;
+}
 .links-wrapper--inactive{
-  animation: 800ms links-wrapper--inactive 800ms ease forwards;
+  animation: var.$ani-dur links-wrapper--inactive ease forwards;
+}
+@keyframes links-wrapper--active{
+  100%{
+    min-height: 100vh;
+    gap: .1rem;
+  }
 }
 @keyframes links-wrapper--inactive{
   100%{
+    min-height: 0vh;
     gap: 0rem;
   }
 }
@@ -54,49 +65,69 @@
 // =============================================================================
 .links-wrapper{
   .link-wrapper--to-home--animate{
-    animation: var.$ani-dur link-wrapper--mobile--to-home--animate ease forwards;
+    animation: var.$ani-dur link-wrapper--to-home--animate ease forwards;
 
     @include mix.for-size(tablet){
-      animation: var.$ani-dur link-wrapper--to-home--animate ease forwards;
+      animation: var.$ani-dur link-wrapper--to-home--tablet--animate ease forwards;
     }
   }
   .link-wrapper--from-home--animate{
-    animation: var.$ani-dur link-wrapper--mobile--from-home--animate ease forwards;
+    animation: var.$ani-dur link-wrapper--from-home--animate ease forwards;
 
     @include mix.for-size(tablet){
-      animation: var.$ani-dur link-wrapper--from-home--animate ease forwards;
+      animation: var.$ani-dur link-wrapper--from-home--tablet--animate ease forwards;
     }
   }
 }
-@keyframes link-wrapper--mobile--to-home--animate {
-  0%{
-    height: 0vh;
-  }
-  100%{
-    height: 21.3rem;
-  } 
-}
-@keyframes link-wrapper--mobile--from-home--animate {
-  0%{
-    height: 21.3rem;
-  } 
-  100%{
-    height: 0vh;
-  } 
-}
 @keyframes link-wrapper--to-home--animate {
   0%{
-    height: 0vh;
-  }
+    flex: 1;
+    height: unset;
+    min-height: 21.3rem;
+    transform: translateX(-100%);
+  } 
   100%{
-    height: 34rem;
+    flex: 1;
+    height: unset;
+    min-height: 21.3rem;
+    transform: translateX(0%);
   } 
 }
 @keyframes link-wrapper--from-home--animate {
   0%{
-    height: 34rem;
+    flex: 1;
+    min-height: 21.3rem;
+    height: unset;
   } 
   100%{
+    flex: unset;
+    min-height: 0vh;
+    height: 0vh;
+  } 
+}
+@keyframes link-wrapper--to-home--tablet--animate {
+  0%{
+    flex: 1;
+    height: unset;
+    min-height: 34rem;
+    transform: translateX(-100%);
+  } 
+  100%{
+    flex: 1;
+    height: unset;
+    min-height: 34rem;
+    transform: translateX(0%);
+  } 
+}
+@keyframes link-wrapper--from-home--tablet--animate {
+  0%{
+    flex: 1;
+    min-height: 34rem;
+    height: unset;
+  } 
+  100%{
+    flex: unset;
+    min-height: 0vh;
     height: 0vh;
   } 
 }

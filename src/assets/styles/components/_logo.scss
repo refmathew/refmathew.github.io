@@ -2,6 +2,7 @@
 @use '../abstracts/var';
 
 .logo-wrapper{
+  z-index: 1;
   display: inline-block;
   position: fixed;
   @include mix.clamped(top, 24, 47);
