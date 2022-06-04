@@ -2,8 +2,13 @@
 @use "./base/reset";
 @use "./base/globals";
 
+@use "./components/sectionDivider";
+@use "./components/sectionHeading";
+@use "./components/customSection";
+
 @use "./layouts/default";
 
+@use "./views/page";
 @use "./views/index";
 @use "./views/whoIAm";
 @use "./views/whatIveMade";

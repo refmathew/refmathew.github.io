@@ -1,0 +1,22 @@
+@use '../../../abstracts/mixins' as mix;
+@use '../../../abstracts/var';
+
+
+// .custom-section{
+  // position: relative;
+  
+  // &__heading{ 
+    
+  // }
+  // &__logos{ 
+    // overflow: scroll;
+
+    // :not(:last-child){
+      // @include mix.clamped(margin-right, 16, 20);
+    // }
+  
+    // img{ 
+
+    // }
+  // }
+// }

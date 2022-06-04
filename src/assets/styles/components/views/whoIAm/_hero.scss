@@ -1,0 +1,83 @@
+@use '../../../abstracts/mixins' as mix;
+@use '../../../abstracts/var';
+
+
+.page--who-i-am{
+  .hero{
+    gap: 1.6rem;
+    height: 100vh;
+    min-height: 64rem;
+    position: relative;
+    @include mix.flex(column, center, center);
+    @include mix.for-size(tablet){
+      align-items: flex-start;
+    }
+
+    *{
+      text-align: center;
+      @include mix.for-size(tablet){
+        text-align: left;
+      }
+    }
+
+    &__text--top{
+      @include mix.font('Open Sans', 24, 32, $wgt: 400);   
+    }
+    &__text--top span{
+      font: inherit;
+      font-weight: 700;
+    }
+    &__text--middle {
+      @include mix.header-font();
+    }
+    &__text--middle span {
+      font: inherit;
+      text-decoration: underline;
+    }
+    &__text--bottom {
+      @include mix.font('Open Sans', 14, 16);
+    }
+
+    &__cta{
+      background-color: var.$accent;
+      color: var.$primary-0;
+      margin-top: 1.6rem;
+      padding: 1.6rem 2rem;
+      @include mix.font('Monserrat', 16, $wgt: 700);
+    }
+
+    &__guide{
+      background: transparent;
+      border: .2rem solid var.$secondary;
+      border-radius: 1rem;
+      bottom: 6.4rem;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      @include mix.clamped(width, 16, 20);
+      @include mix.clamped(height, 32, 40);
+    }
+    &__guide::after{
+      animation: var.$ani-dur guide--animate var.$ani-dur ease infinite;
+      background-color: var.$secondary;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: .4rem;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      width: .4rem;
+    }
+  }
+}
+
+
+@keyframes guide--animate{
+  0%{
+    top: 10%;
+  }
+  100%{
+    top: 70%;
+  }
+}

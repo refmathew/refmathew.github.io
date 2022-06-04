@@ -21,7 +21,7 @@ export default {
   props: ['pageTitle'],
   data() {
     return {
-      pageTitleNew: '',
+      pageTitleNew: this.pageTitle,
     }
   },
   watch: {

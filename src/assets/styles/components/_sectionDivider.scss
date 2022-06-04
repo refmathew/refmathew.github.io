@@ -1,0 +1,13 @@
+@use "../abstracts/var";
+@use "../abstracts/mixins" as mix;
+
+
+.section-divider{
+  background-color: var.$secondary;
+  height: .2rem;
+  left: 50%;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 64%;
+}

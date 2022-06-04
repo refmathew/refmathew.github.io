@@ -1,0 +1,8 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+
+
+.page{
+  width: 100%;
+  @include mix.clamped-shorthand-2(padding, 86, 128, 18, 146);
+}

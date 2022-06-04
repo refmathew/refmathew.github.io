@@ -1,0 +1,12 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+@use '../components/views/whoIAm/hero';
+@use '../components/views/whoIAm/customSection';
+
+
+.layout-default{
+  .page--who-i-am{
+    background-color: var.$primary-1;
+  }
+}
+

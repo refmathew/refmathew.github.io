@@ -6,7 +6,7 @@
     <socials :animate="animate" />
     <index :links="this.$static.links" :page-title="getPageTitle()" :animate="animate" />
     <slot />
-    <who-i-am />
+    <who-i-am :pageTitle="getPageTitle()" />
   </div>
 </template>
 
