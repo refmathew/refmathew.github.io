@@ -1,0 +1,10 @@
+@use '../../../abstracts/mixins' as mix;
+@use '../../../abstracts/var';
+
+.page--writings{
+  .hero{
+    min-height: 100vh;
+    @include mix.header-font();
+    @include mix.flex($just: center, $align:  center);
+  }
+}

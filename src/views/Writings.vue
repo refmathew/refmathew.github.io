@@ -1,6 +1,6 @@
 <template>
-  <div class="page page--writings" v-show="pageTitle === 'Writings'">
-    <main>
+  <div class="page page--writings" v-show="pageTitle === 'Writings...'">
+    <main class="hero">
       Coming Soon...
     </main>
   </div>

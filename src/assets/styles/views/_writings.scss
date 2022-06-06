@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/var';
+@use '../components/views/writings/hero';
+
+.layout-default{
+  .page--writings{
+    background-color: var.$primary-3
+  }
+}

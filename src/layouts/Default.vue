@@ -8,6 +8,7 @@
     <slot />
     <who-i-am :pageTitle="getPageTitle()" />
     <what-ive-made :pageTitle="getPageTitle()" />
+    <writings :pageTitle="getPageTitle()" />
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import Socials from '~/components/layouts/default/Socials'
 import Index from '~/views/Index'
 import WhoIAm from '~/views/WhoIAm'
 import WhatIveMade from '~/views/WhatIveMade'
+import Writings from '~/views/Writings'
 
 export default {
   components: {
@@ -46,6 +48,7 @@ export default {
     Index,
     WhoIAm,
     WhatIveMade,
+    Writings,
   },
   data() {
     return {
