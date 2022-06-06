@@ -2,21 +2,20 @@
 @use '../../../abstracts/var';
 
 
-// .custom-section{
-  // position: relative;
-  
-  // &__heading{ 
-    
-  // }
-  // &__logos{ 
-    // overflow: scroll;
+.custom-section__logos{
+  display: flex;
+  margin-top: 3.2rem;
+  overflow-x: scroll;
+  @include mix.clamped(column-gap, 16, 20);
 
-    // :not(:last-child){
-      // @include mix.clamped(margin-right, 16, 20);
-    // }
-  
-    // img{ 
-
-    // }
-  // }
-// }
+  &::-webkit-scrollbar{
+    width: 2rem;
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb{ 
+    background-color: #666;
+  }
+  &::-webkit-scrollbar-track{ 
+    background-color: #ddd;
+  }
+}

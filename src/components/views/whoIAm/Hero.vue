@@ -5,9 +5,9 @@
     <p class="hero__text--bottom">
       I am a web developer who especially likes working on the front-end.
       <br />
-      Making things look as close to perfection as they could be is what I am good at.
+      Making things look as close to <span>perfection</span> as they could be is what I am good at.
     </p>
-    <button class="hero__cta">Portfolio</button>
+    <g-link class="hero__cta" to="/what-ive-made">Portfolio</g-link>
     <div class="hero__guide"> </div>
     <section-divider />
   </main>

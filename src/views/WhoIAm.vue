@@ -1,10 +1,10 @@
 <template>
   <div :class="['page', 'page--who-i-am', 'page--who-i-am--to',]" v-show="pageTitle === 'Who I Am'">
     <hero />
-    <custom-section :is-last-custom-section='true' section-name="tech" section-heading="Technologies I've used"
-      :section-logos="technologies" />
-    <custom-section :is-last-custom-section='false' section-name="tool" section-heading="Tools in my workflow"
-      :section-logos="tools" />
+    <custom-section class="section--tech" :is-last-custom-section='false' section-name="tech"
+      section-heading="Technologies I've used" :section-logos="technologies" />
+    <custom-section class="section--tools" :is-last-custom-section='true' section-name="tool"
+      section-heading="Tools in my workflow" :section-logos="tools" />
   </div>
 </template>
 

@@ -5,7 +5,7 @@
   position: fixed;
   right: 0;
   top: 7.4rem;
-  z-index: 1;
+  z-index: 2;
 
   @include mix.for-size(tablet){
     top: 0;
@@ -32,6 +32,7 @@
   }
 
   &__itself{
+    text-align: right;
     @include mix.header-font();
   }
 }

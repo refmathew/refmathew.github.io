@@ -2,7 +2,7 @@
   <section class="custom-section">
     <section-heading :sectionHeading="sectionHeading" />
     <slot />
-    <section-divider v-if="isLastCustomSection === true" />
+    <section-divider v-if="isLastCustomSection === false" />
   </section>
 </template>
 

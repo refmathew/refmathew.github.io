@@ -1,5 +1,5 @@
 <template>
-  <h2 class="section__heading">{{ sectionHeading }}</h2>
+  <h2 class="custom-section__heading">{{ sectionHeading }}:</h2>
 </template>
 
 <script>

@@ -36,8 +36,12 @@
     }
     &__text--bottom {
       @include mix.font('Open Sans', 14, 16);
-    }
 
+      span {
+        font: inherit;
+        font-weight: 700;
+      }
+    }
     &__cta{
       background-color: var.$accent;
       color: var.$primary-0;

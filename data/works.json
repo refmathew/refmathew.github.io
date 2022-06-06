@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Car Center",
+    "desc": "",
+    "img": "car-center",
+    "stack": ["gridsome", "sass"],
+    "link": "https://car-center.netlify.app",
+    "completed": true
+  }
+]

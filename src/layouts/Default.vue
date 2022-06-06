@@ -7,6 +7,7 @@
     <index :links="this.$static.links" :page-title="getPageTitle()" :animate="animate" />
     <slot />
     <who-i-am :pageTitle="getPageTitle()" />
+    <what-ive-made :pageTitle="getPageTitle()" />
   </div>
 </template>
 
@@ -34,6 +35,7 @@ import BurgerMenu from '~/components/layouts/default/BurgerMenu'
 import Socials from '~/components/layouts/default/Socials'
 import Index from '~/views/Index'
 import WhoIAm from '~/views/WhoIAm'
+import WhatIveMade from '~/views/WhatIveMade'
 
 export default {
   components: {
@@ -43,6 +45,7 @@ export default {
     Socials,
     Index,
     WhoIAm,
+    WhatIveMade,
   },
   data() {
     return {

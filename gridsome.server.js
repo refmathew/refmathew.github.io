@@ -8,17 +8,27 @@
 module.exports = function (api) {
   api.loadSource(async actions => {
 
-    const Link = require('./data/links.json');
-    const Social = require('./data/socials.json');
+    const Links = require('./data/links.json');
+    const Projects = require('./data/projects.json');
+    const Socials = require('./data/socials.json');
+    const Works = require('./data/works.json');
 
     const LinksCollection = actions.addCollection('Link');
+    const ProjectsCollection = actions.addCollection('Project');
     const SocialsCollection = actions.addCollection('Social');
+    const WorksCollection = actions.addCollection('Work');
 
-    for (const link of Link){
+    for (const link of Links){
       LinksCollection.addNode(link);
     }
-    for (const social of Social){
+    for (const project of Projects){
+      ProjectsCollection.addNode(project);
+    }
+    for (const social of Socials){
       SocialsCollection.addNode(social);
+    }
+    for (const work of Works){
+      WorksCollection.addNode(work);
     }
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
   })

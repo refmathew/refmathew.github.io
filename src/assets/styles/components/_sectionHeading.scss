@@ -1,0 +1,7 @@
+@use '../abstracts/var';
+@use '../abstracts/mixins' as mix;
+
+
+.custom-section__heading{ 
+  @include mix.font('Montserrat', 20, 32, 700);
+}
