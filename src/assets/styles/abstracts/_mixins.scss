@@ -42,5 +42,5 @@
 @mixin header-font(){
   font-family: var.$f-header;
   font-weight: 700;
-  @include clamped(font-size, 32, 64);
+  @include clamped(font-size, 32, 48);
 }
