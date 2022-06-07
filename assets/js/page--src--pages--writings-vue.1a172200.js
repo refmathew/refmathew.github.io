@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"25Xv":function(t,n,e){"use strict";e.r(n);var i={metaInfo:{title:"Writings"}},l=e("KHd+"),s=Object(l.a)(i,(function(){var t=this.$createElement;return(this._self._c||t)("div")}),[],!1,null,null,null);n.default=s.exports}}]);

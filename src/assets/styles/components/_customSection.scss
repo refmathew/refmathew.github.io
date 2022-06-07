@@ -1,9 +1,0 @@
-@use '../abstracts/var';
-@use '../abstracts/mixins' as mix;
-
-
-.custom-section{ 
-  position: relative;
-  @include mix.clamped(padding-top, 86, 128);
-  @include mix.clamped(padding-bottom, 86, 128);
-}
