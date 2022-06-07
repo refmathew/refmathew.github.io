@@ -3,11 +3,14 @@
   "private": true,
   "scripts": {
     "build": "gridsome build",
-    "develop": "gridsome develop",
+    "deploy": "gridsome build && gh-pages -d dist -b main",
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": { 
+    "gh-pages": "^4.0.0",
     "sass": "^1.51.0",
     "sass-loader": "^10",
     "style-resources-loader": "^1.5.0"
