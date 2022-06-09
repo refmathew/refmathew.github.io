@@ -5,5 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
+  icon: './src/brand.svg',
+  siteName: 'refmathew',
   siteUrl: 'https://refmathew.github.io',
+  titleTemplate: 'refmathew | %s'
 }
