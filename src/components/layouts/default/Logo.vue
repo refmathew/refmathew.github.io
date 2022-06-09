@@ -6,7 +6,7 @@
     <g-link to="/" class="logo">
       <div class="logo__line"></div>
       <span class="logo__itself">
-        rmathew
+        refmathew
       </span>
     </g-link>
   </div>
