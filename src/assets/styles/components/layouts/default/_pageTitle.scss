@@ -5,6 +5,7 @@
   position: fixed;
   right: 0;
   top: 7.4rem;
+  visibility: hidden;
   z-index: 2;
 
   @include mix.for-size(tablet){

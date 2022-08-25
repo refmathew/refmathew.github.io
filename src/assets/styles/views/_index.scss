@@ -4,7 +4,7 @@
 .links-wrapper{
   overflow: hidden;
   min-height: 100vh;
-  @include mix.flex(column, $align:center);
+  @include mix.flex(column);
 
   .link-wrapper{
     flex: 1;

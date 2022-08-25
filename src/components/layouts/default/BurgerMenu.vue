@@ -25,14 +25,12 @@ export default {
   watch: {
     pageTitle(to, from) {
       if (from === 'Home') {
-        this.animateFromHome = false
         this.animateToHome = false
         this.animateFromHome = true
       }
 
       if (to === 'Home') {
         this.animateFromHome = false
-        this.animateToHome = false
         this.animateToHome = true
       }
     },
