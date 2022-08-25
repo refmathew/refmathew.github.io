@@ -22,6 +22,11 @@ export default {
       animateFromHome: false,
     }
   },
+  created(){
+    // On initial navigation, if the visitor lands on a page other than
+    // homepage, show the burgerMenu.
+    if (this.pageTitle !== 'Home') this.animateFromHome = true
+  },
   watch: {
     pageTitle(to, from) {
       if (from === 'Home') {
